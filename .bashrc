@@ -1,23 +1,54 @@
-# for osx
+# setup os specific stuff
+# -----------------------
+# open and vpn
+case "$OSTYPE" in
+    cygwin*)
+        alias open="cmd /c start"
+        ;;
+    linux*)
+        alias start="xdg-open"
+        alias open="xdg-open"
+        alias vpn="/opt/cisco/anyconnect/bin/vpn"
+        alias vpnc="/opt/cisco/anyconnect/bin/vpn connect vpn.unc.edu"
+        alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect"
+        ;;
+    darwin*)
+        alias start="open"
+        ;;
+esac
+
+# powerline
+# if powerline exists
+if [ -f `which powerline-daemon` ]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    case "$OSTYPE" in
+        linux*)
+            . /usr/share/powerline/bash/powerline.sh
+            ;;
+        darwin*)
+            . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+            ;;
+        esac
+fi
+
+# -----------------------
+
 alias vi=vim 
 
 # set up terminal prompt
 # PS1="[\u@\h:\w] $ "
-
-# powerline stuff
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /Users/rohan/anaconda2/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
 # searching
 alias qfind="find . -name "
 alias findinfile="grep -rnw . -e "
 alias grep="grep --color=auto --ignore-case --context=1"
 alias tree="tree --dirsfirst -C"
+alias diff_folder="diff -rq --exclude='.git' "
 
-# python stuff 
-alias nb="jupyter notebook"
+# load scripts
+# export PATH=~/Cloud/scripts/linux:$PATH
 
 # some common aliases
 alias ls="ls -G"
@@ -65,10 +96,12 @@ extract() {
      fi 
 }
 
-# afs gal
+# common paths
 alias afsgal="cd /afs/cas.unc.edu/classes/fall2016/astr_703_001/"
 
-# conda stuff
+# python/conda stuff
 alias astro="source activate astro"
 alias py="source activate scipy"
 alias dv="source deactivate"
+alias nb="jupyter notebook"
+

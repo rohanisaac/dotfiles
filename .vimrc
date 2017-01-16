@@ -40,9 +40,12 @@ Plugin 'scrooloose/syntastic' "syntax check
 Plugin 'davidhalter/jedi-vim' "autocomplete
 Plugin 'ervandew/supertab'    "with tabs
 Plugin 'tpope/vim-commentary'  "easy comments
-
+Plugin 'majutsushi/tagbar'   "view tags
 "Latex support
-Plugin 'lervag/vimtex'
+"Plugin 'lervag/vimtex'
+
+"Todo
+Plugin 'vitalk/vim-simple-todo'
 
 "CSV file support
 Plugin 'chrisbra/csv.vim'
@@ -53,6 +56,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 set encoding=utf-8
+set clipboard=unnamed " set vim==system clipboard
 set backspace=2 " make work like traditional backspace
 set hlsearch  " highlight all search results <C-L> to clear
 set background=light
@@ -61,11 +65,28 @@ colorscheme molokai
 set colorcolumn=80
 set spell spelllang=en_us
 
+"make tabs be replaced by 4 spaces
+set tabstop=8
+set softtabstop=0
+set expandtab
+set shiftwidth=4
+set smarttab
+
+"Turn off condensing latex symbols on the active line
+set cole=0
+
 "Powerline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-set guifont=Inconsolata\ for\ Powerline:h16
+if has('mac')
+    set guifont=Inconsolata\ for\ Powerline:h16
+elseif has('unix')
+    set guifont=Inconsolata\ for\ Powerline\ 12
+endif
 let g:airline_theme='luna'
+
+"Gui options turn off toolbar
+set guioptions=
 
 "Smooth scroll functions
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>

@@ -1,0 +1,21 @@
+# add bashrc to bash profile
+
+cat add_to_bashprofile >> ~/.bash_profile
+
+# ------------------
+# install powerline
+# requires brew
+
+brew install python
+# optional, but could be useful
+brew install socat
+brew install psutils
+
+pip install powerline-status
+
+# find powerline location
+pip show powerline-status
+# ------------------
+#
+# Other useful stuff
+brew install ag
