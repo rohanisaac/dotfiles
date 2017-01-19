@@ -104,4 +104,5 @@ alias astro="source activate astro"
 alias py="source activate scipy"
 alias dv="source deactivate"
 alias nb="jupyter notebook"
-
+alias ana="export PATH="~/anaconda3/bin:$PATH""
+alias res="source activate research"
