@@ -14,6 +14,7 @@ case "$OSTYPE" in
         ;;
     darwin*)
         alias start="open"
+        export DISPLAY=/private/tmp/com.apple.launchd.AD2fTX6g9b/org.macosforge.xquartz:0
         ;;
 esac
 
@@ -51,8 +52,8 @@ alias diff_folder="diff -rq --exclude='.git' "
 # export PATH=~/Cloud/scripts/linux:$PATH
 
 # some common aliases
-alias ls="ls -G"
-alias ll="ls -GAlh"
+alias ls="ls -G --color=auto"
+alias ll="ls -GAlh --color=auto"
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
@@ -106,3 +107,7 @@ alias dv="source deactivate"
 alias nb="jupyter notebook"
 alias ana="export PATH="~/anaconda3/bin:$PATH""
 alias res="source activate research"
+
+# load scripts
+export PATH=~/Cloud/scripts/linux:$PATH
+
