@@ -15,6 +15,7 @@ case "$OSTYPE" in
     darwin*)
         alias start="open"
         export DISPLAY=/private/tmp/com.apple.launchd.AD2fTX6g9b/org.macosforge.xquartz:0
+        PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
         ;;
 esac
 
@@ -42,6 +43,7 @@ alias vi=vim
 # PS1="[\u@\h:\w] $ "
 
 # searching
+# use qfind "*.ipynb"
 alias qfind="find . -name "
 alias findinfile="grep -rnw . -e "
 alias grep="grep --color=auto --ignore-case --context=1"
@@ -111,3 +113,6 @@ alias res="source activate research"
 # load scripts
 export PATH=~/Cloud/scripts/linux:$PATH
 
+# ranger
+# open in folder last in ranger
+alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'

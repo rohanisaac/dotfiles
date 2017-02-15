@@ -35,6 +35,7 @@ Plugin 'ScrollColors'
 Plugin 'terryma/vim-smooth-scroll'
 
 "Code stuff
+Plugin 'tell-k/vim-autopep8'
 "Plugin 'hynek/vim-python-pep8-indent'  "autopep8
 Plugin 'scrooloose/syntastic' "syntax check
 Plugin 'davidhalter/jedi-vim' "autocomplete
