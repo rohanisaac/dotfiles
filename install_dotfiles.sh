@@ -1,3 +1,5 @@
+# Install git and vim
+
 cd ~
 ln -s ~/Cloud/scripts/dotfiles/.bashrc 
 ln -s ~/Cloud/scripts/dotfiles/.vimrc

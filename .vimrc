@@ -18,7 +18,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'  
-Plugin 'yggdroot/indentline'
+"Plugin 'yggdroot/indentline'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 "Fuzzy file finder
 Plugin 'kien/ctrlp.vim'
@@ -42,6 +43,7 @@ Plugin 'davidhalter/jedi-vim' "autocomplete
 Plugin 'ervandew/supertab'    "with tabs
 Plugin 'tpope/vim-commentary'  "easy comments
 Plugin 'majutsushi/tagbar'   "view tags
+"Plugin 'jmcantrell/vim-virtualenv'
 "Latex support
 "Plugin 'lervag/vimtex'
 
@@ -76,18 +78,35 @@ set smarttab
 "Turn off condensing latex symbols on the active line
 set cole=0
 
+"Indent guide stuff
+let g:indent_guides_guide_size=1
+let g:indent_guides_start_level=2
+let g:indent_guides_enable_on_vim_startup = 1
+
 "Powerline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 if has('mac')
-    set guifont=Inconsolata\ for\ Powerline:h16
+    set guifont=Inconsolata\ for\ Powerline:h14
 elseif has('unix')
-    set guifont=Inconsolata\ for\ Powerline\ 12
+    set guifont=Inconsolata\ for\ Powerline\ 10
 endif
 let g:airline_theme='luna'
 
 "Gui options turn off toolbar
 set guioptions=
+
+"Show invisible characters with \l
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+" set listchars=tab:▸\ ,eol:¬
+" set lcs+=space:·
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
+"Invisible character colors 
+highlight NonText guifg=#333333
+highlight SpecialKey guifg=#333333
 
 "Smooth scroll functions
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>

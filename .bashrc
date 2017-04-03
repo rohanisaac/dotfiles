@@ -1,3 +1,7 @@
+# source bash aliases
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
 # setup os specific stuff
 # -----------------------
 # open and vpn
@@ -14,20 +18,50 @@ case "$OSTYPE" in
         ;;
     darwin*)
         alias start="open"
-        export DISPLAY=/private/tmp/com.apple.launchd.AD2fTX6g9b/org.macosforge.xquartz:0
         PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
         ;;
 esac
 
+# parse_git_branch() {
+#          git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+
+# }
+# export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ ""]]]"
+
+
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
+[ -f /usr/local/etc/bash_completion  ] && . /usr/local/etc/bash_completion
+
+# set up terminal prompt
+# PS1="[\u@\h:\w] $ "
+# change xterm title to cwd ..
+case $TERM in
+    xterm*)
+        # PS1="[e]0;wa]\$ "
+        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}:${PWD/#$HOME/~}\007"'
+    ;;
+esac
+
+
 # powerline
-# if powerline exists
-if [ -f `which powerline-daemon` ]; then
+# if powerline exists using 
+# http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
+if command -v powerline-daemon >/dev/null 2>&1; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
     case "$OSTYPE" in
         linux*)
-            . /usr/share/powerline/bash/powerline.sh
+            if [ -f /usr/share/powerline/bash/powerline.sh ]; then
+                . /usr/share/powerline/bash/powerline.sh
+            fi
+            if [ -f /usr/share/powerline/bindings/bash/powerline.sh  ]; then
+                . /usr/share/powerline/bindings/bash/powerline.sh
+            fi
             ;;
         darwin*)
             . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
@@ -37,10 +71,14 @@ fi
 
 # -----------------------
 
-alias vi=vim 
+if [ -f /usr/bin/vimx ]; then
+    alias vi='vimx'
+    alias vim='vimx'
+elif [ -f /usr/bin/vim ]; then
+    alias vi='vim'
+fi
 
-# set up terminal prompt
-# PS1="[\u@\h:\w] $ "
+
 
 # searching
 # use qfind "*.ipynb"
@@ -102,17 +140,28 @@ extract() {
 # common paths
 alias afsgal="cd /afs/cas.unc.edu/classes/fall2016/astr_703_001/"
 
-# python/conda stuff
-alias astro="source activate astro"
-alias py="source activate scipy"
-alias dv="source deactivate"
-alias nb="jupyter notebook"
-alias ana="export PATH="~/anaconda3/bin:$PATH""
-alias res="source activate research"
-
 # load scripts
 export PATH=~/Cloud/scripts/linux:$PATH
 
 # ranger
 # open in folder last in ranger
 alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
+
+# bash completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+elif [ -f /etc/bash_completion  ]; then
+    . /etc/bash_completion
+fi
+
+# python/conda stuff
+
+# use single quotes so that the variables are escaped, i.e. don't expand on defn, but on use
+
+alias astro="source activate astro"
+alias py="source activate scipy"
+alias dv="source deactivate"
+alias nb="jupyter notebook"
+alias ana='export PATH=~/anaconda3/bin:$PATH'
+alias res="source activate research"
+alias em="emacs --no-window"
