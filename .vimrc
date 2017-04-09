@@ -47,7 +47,7 @@ set clipboard=unnamed  " set vim==system clipboard
 set number " add line numbers
 set colorcolumn=80
 set spell spelllang=en_us
-
+set hlsearch
 " set background=light
 let python_highlight_all=1
 
@@ -84,7 +84,8 @@ set guioptions=
 nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 " set listchars=tab:▸\ ,eol:¬
-" set lcs+=space:·
+" set lcs+=space:
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
 " set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 "Invisible character colors
@@ -112,4 +113,3 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
 filetype indent on
 set autoindent
-set foldmethod=indent
