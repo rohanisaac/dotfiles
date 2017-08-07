@@ -19,6 +19,7 @@ elif [ -f /etc/bash_completion  ]; then
 fi
 
 # add fzf
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # TERMINAL OPEN ACROSS OS
 # ----------------------------------------------------------------------------
@@ -47,7 +48,8 @@ NC='\[\033[0m\]'
 # PS1
 # ----------------------------------------------------------------------------
 if [ -f ~/.git-prompt.sh ]; then
-	export PS1="$yellow\u$NC@$yellow\h: $purple\w $cyan$( __git_ps1 '(%s)' )$NC:\n$ "
+	source ~/.git-prompt.sh
+	export PS1="$yellow\u$NC@$yellow\h: $purple\w $cyan\$( __git_ps1 '(%s)' )$NC:\n$ "
 else
 	export PS1="$yellow\u$NC@$yellow\h: $purple\w $NC:\n$ "
 fi

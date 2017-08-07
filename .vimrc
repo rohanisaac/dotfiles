@@ -8,7 +8,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'  " Better defaults
-" Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
+Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
 " Plugin 'tpope/vim-fugitive'  " Git ... commands
 Plugin 'airblade/vim-gitgutter'  " git diff on the left
 Plugin 'vim-airline/vim-airline'  " better status bar
@@ -84,7 +84,7 @@ let g:airline#extensions#tabline#enabled = 1
 if has('mac')
     set guifont=Source\ Code\ Pro\ Light:h13
 elseif has('unix')
-    set guifont=Source\ Code\ Pro\ Light\ 13
+    set guifont=Source\ Code\ Pro\ Light\ 10
 endif
 let g:airline_theme='understated'
 
