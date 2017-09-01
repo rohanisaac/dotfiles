@@ -1,37 +1,53 @@
-xterm*faceName: Inconsolata for Powerline
+
+xterm*faceName: Source Code Pro
 xterm*faceSize: 11
-xterm*vt100*geometry: 120x40
+xterm*vt100*geometry: 90x50
 xterm*saveLines: 10000
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*termName: xterm-color
-
+xterm*allowBoldFonts: false
 
 ! right hand side scrollbar...
 xterm*rightScrollBar: true
 xterm*ScrollBar: true
 
-xterm*eightBitInput: false
-xterm*foreground: rgb:a8/a8/a8
-xterm*background: rgb:00/00/00
-xterm*color0: rgb:00/00/00
-xterm*color1: rgb:a8/00/00
-xterm*color2: rgb:00/a8/00
-xterm*color3: rgb:a8/54/00
-xterm*color4: rgb:00/00/a8
-xterm*color5: rgb:a8/00/a8
-xterm*color6: rgb:00/a8/a8
-xterm*color7: rgb:a8/a8/a8
-xterm*color8: rgb:54/54/54
-xterm*color9: rgb:fc/54/54
-xterm*color10: rgb:54/fc/54
-xterm*color11: rgb:fc/fc/54
-xterm*color12: rgb:54/54/fc
-xterm*color13: rgb:fc/54/fc
-xterm*color14: rgb:54/fc/fc
-xterm*color15: rgb:fc/fc/fc
-xterm*boldMode: false
-xterm*colorBDMode: true
-xterm*colorBD: rgb:fc/fc/fc
+
+! special
+xterm*.foreground:   #bbbbbb
+xterm*.background:   #121212
+xterm*.cursorColor:  #bbbbbb
+
+! black
+xterm*.color0:       #121212
+xterm*.color8:       #555555
+
+! red
+xterm*.color1:       #fa2573
+xterm*.color9:       #f6669d
+
+! green
+xterm*.color2:       #98e123
+xterm*.color10:      #b1e05f
+
+! yellow
+xterm*.color3:       #dfd460
+xterm*.color11:      #fff26d
+
+! blue
+xterm*.color4:       #1080d0
+xterm*.color12:      #00afff
+
+! magenta
+xterm*.color5:       #8700ff
+xterm*.color13:      #af87ff
+
+! cyan
+xterm*.color6:       #43a8d0
+xterm*.color14:      #51ceff
+
+! white
+xterm*.color7:       #bbbbbb
+xterm*.color15:      #ffffff
 
 ! {{{ Quick Reference
 !

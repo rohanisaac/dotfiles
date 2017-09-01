@@ -1,5 +1,12 @@
 #! bin/bash
 
+# Basic exports
+# ----------------------------------------------------------------------------
+export EDITOR=vim
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # PATH and other includes
 # ----------------------------------------------------------------------------
 # add gnuutils to path and man path
@@ -54,6 +61,10 @@ else
 	export PS1="$yellow\u$NC@$yellow\h: $purple\w $NC:\n$ "
 fi
 
+# fix bugs
+# ----------------------------------------------------------------------------
+# Fix backspace bug on xterm
+stty erase '^?'
 # Souce other files
 # ----------------------------------------------------------------------------
 

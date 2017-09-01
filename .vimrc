@@ -57,6 +57,7 @@ set clipboard=unnamed  " set vim==system clipboard
 set number " add line numbers
 set colorcolumn=80
 set spell spelllang=en_us
+set nospell
 set hlsearch
 " set background=light
 set cursorline
@@ -73,6 +74,9 @@ set smarttab
 " Don't conceal anything
 set conceallevel=2
 
+" spell stuff
+nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
+
 "Indent guide stuff
 let g:indent_guides_guide_size=1
 let g:indent_guides_start_level=2
@@ -84,7 +88,7 @@ let g:airline#extensions#tabline#enabled = 1
 if has('mac')
     set guifont=Source\ Code\ Pro\ Light:h13
 elseif has('unix')
-    set guifont=Source\ Code\ Pro\ Light\ 10
+    set guifont=Source\ Code\ Pro\ 10
 endif
 let g:airline_theme='understated'
 
