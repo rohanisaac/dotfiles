@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'  " Better defaults
@@ -18,6 +19,7 @@ Plugin 'tomasr/molokai'
 "Plugin 'yggdroot/indentline'
 Plugin 'nathanaelkane/vim-indent-guides'
 " Plugin 'kien/ctrlp.vim' "Fuzzy file finder
+Plugin 'junegunn/fzf.vim'
 Plugin 'ntpeters/vim-better-whitespace'  " Highlights trailing, :StripWhitespace
 Plugin 'tpope/vim-surround' "complete brackets/quotes
 Plugin 'jiangmiao/auto-pairs'  " insert brackets in pairs
@@ -64,10 +66,10 @@ set cursorline
 let python_highlight_all=1
 
 "make tabs be replaced by 4 spaces
-set tabstop=8
-set softtabstop=0
-set expandtab
+set tabstop=4
 set shiftwidth=4
+set expandtab
+set softtabstop=0
 set smarttab
 
 " Replace concealed text by a single character

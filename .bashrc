@@ -1,11 +1,14 @@
 #! bin/bash
 
-# Basic exports
+# Basic enviroment variables
 # ----------------------------------------------------------------------------
 export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
+# unlimited bash history
+export HISTSIZE=
+export HISTFILESIZE=
 
 # PATH and other includes
 # ----------------------------------------------------------------------------
@@ -26,7 +29,7 @@ elif [ -f /etc/bash_completion  ]; then
 fi
 
 # add fzf
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # TERMINAL OPEN ACROSS OS
 # ----------------------------------------------------------------------------
@@ -55,10 +58,10 @@ NC='\[\033[0m\]'
 # PS1
 # ----------------------------------------------------------------------------
 if [ -f ~/.git-prompt.sh ]; then
-	source ~/.git-prompt.sh
-	export PS1="$yellow\u$NC@$yellow\h: $purple\w $cyan\$( __git_ps1 '(%s)' )$NC:\n$ "
+    source ~/.git-prompt.sh
+    export PS1="$yellow\u$NC@$yellow\H $purple\w $cyan\$( __git_ps1 '(%s)' )$NC\n$ "
 else
-	export PS1="$yellow\u$NC@$yellow\h: $purple\w $NC:\n$ "
+    export PS1="$yellow\u$NC@$yellow\H $purple\w $NC\n$ "
 fi
 
 # fix bugs
@@ -71,10 +74,10 @@ stty erase '^?'
 
 # source bash aliases
 if [ -f ~/.bash_aliases ]; then
-. ~/.bash_aliases
+    . ~/.bash_aliases
 fi
 
 # source bash aliases
 if [ -f ~/.private_aliases ]; then
-. ~/.private_aliases
+    . ~/.private_aliases
 fi

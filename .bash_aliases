@@ -9,6 +9,9 @@ elif [ -f /usr/bin/vim ]; then
     alias vi='vim'
 fi
 
+# pine
+alias pine=alpine
+
 # searching
 # use qfind "*.ipynb"
 alias qfind="find . -name "
@@ -79,6 +82,10 @@ function ana {
 	export PATH=~/anaconda3/bin:$PATH
     which python
     python --version
+}
+function ipy {
+    export PATH=~/anaconda3/bin:$PATH
+    ipython -i ~/Cloud/scripts/linux/research-ipy-start.py
 }
 alias res="source activate research"
 alias em="emacs --no-window"
