@@ -71,6 +71,9 @@ stty erase '^?'
 # Souce other files
 # ----------------------------------------------------------------------------
 
+# surfraw variables
+export SURFRAW_text_browser=w3m
+export SURFRAW_graphical=no
 
 # source bash aliases
 if [ -f ~/.bash_aliases ]; then
@@ -81,3 +84,5 @@ fi
 if [ -f ~/.private_aliases ]; then
     . ~/.private_aliases
 fi
+
+

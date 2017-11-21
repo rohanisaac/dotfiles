@@ -31,6 +31,7 @@ Plugin 'jiangmiao/auto-pairs'  " insert brackets in pairs
 " Plugin 'davidhalter/jedi-vim' "autocomplete
 Plugin 'ervandew/supertab'    "with tabs
 Plugin 'tpope/vim-commentary'  "easy comments
+Plugin 'junegunn/vim-easy-align' "easy alignment"
 " Plugin 'majutsushi/tagbar'   "view tags
 "Plugin 'jmcantrell/vim-virtualenv'
 "Plugin 'lervag/vimtex'
@@ -85,7 +86,7 @@ let g:indent_guides_start_level=2
 let g:indent_guides_enable_on_vim_startup = 1
 
 "Airline settings
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 if has('mac')
     set guifont=Source\ Code\ Pro\ Light:h13
@@ -152,3 +153,8 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
 filetype indent on
 set autoindent
+set ignorecase
+
+" Markdown files
+au BufNewFile,BufRead *.md  setf markdown
+autocmd BufRead,BufNew *.md set filetype=markdown
