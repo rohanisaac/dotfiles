@@ -1,0 +1,12 @@
+$include /etc/inputrc
+
+set bell-style visible
+set colored-stats On
+set colored-completion-prefix On
+set completion-ignore-case On
+set completion-map-case On
+set enable-bracketed-paste On
+set blink-matching-paren On
+set match-hidden-files
+set visible-stats On
+set show-all-if-ambiguous On
