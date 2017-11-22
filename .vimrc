@@ -6,45 +6,31 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 call vundle#begin()
+
+" Essential
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'  " Better defaults
-Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
-" Plugin 'tpope/vim-fugitive'  " Git ... commands
-Plugin 'airblade/vim-gitgutter'  " git diff on the left
+Plugin 'tpope/vim-surround' " complete brackets/quotes
+Plugin 'jiangmiao/auto-pairs'  " insert brackets in pairs
+Plugin 'ervandew/supertab'    " autocomplete with tabs
+Plugin 'tpope/vim-commentary'  "easy comments
+
+" Appearence
 Plugin 'vim-airline/vim-airline'  " better status bar
 Plugin 'vim-airline/vim-airline-themes'  " Associated themes
-" Plugin 'flazz/vim-colorschemes'  " Vim colorschemes
-Plugin 'tomasr/molokai'
-"Plugin 'yggdroot/indentline'
-Plugin 'nathanaelkane/vim-indent-guides'
-" Plugin 'kien/ctrlp.vim' "Fuzzy file finder
-Plugin 'junegunn/fzf.vim'
+Plugin 'tomasr/molokai' " Theme
+Plugin 'nathanaelkane/vim-indent-guides' " Show indent tabs
 Plugin 'ntpeters/vim-better-whitespace'  " Highlights trailing, :StripWhitespace
-Plugin 'tpope/vim-surround' "complete brackets/quotes
-Plugin 'jiangmiao/auto-pairs'  " insert brackets in pairs
-" Plugin 'ScrollColors'  " For playing with colorschemes
-" Plugin 'terryma/vim-smooth-scroll'
-" Plugin 'tell-k/vim-autopep8'
-"Plugin 'hynek/vim-python-pep8-indent'  "autopep8
-" Plugin 'scrooloose/syntastic' "syntax check
-" Plugin 'davidhalter/jedi-vim' "autocomplete
-Plugin 'ervandew/supertab'    "with tabs
-Plugin 'tpope/vim-commentary'  "easy comments
-Plugin 'junegunn/vim-easy-align' "easy alignment"
-" Plugin 'majutsushi/tagbar'   "view tags
-"Plugin 'jmcantrell/vim-virtualenv'
-"Plugin 'lervag/vimtex'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kien/rainbow_parentheses.vim' " highligts associated ()
 
-"Interferes with vimwiki
-" Plugin 'vitalk/vim-simple-todo'  " <leader> i, o to create, <leader> x
+" Other
+Plugin 'junegunn/vim-easy-align' "easy alignment
+Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
+Plugin 'airblade/vim-gitgutter'  " git diff on the left
+Plugin 'junegunn/fzf.vim'
 Plugin 'vimwiki/vimwiki'
-" Plugin 'xolox/vim-misc'  " dependency for notes
-" Plugin 'xolox/vim-notes'  " notes :Note
-" Plugin 'chrisbra/csv.vim' " CSV file support
-" Plugin 'christoomey/vim-tmux-navigator' "Make work with tmux
-" Plugin 'godlygeek/tabular'
 
 call vundle#end()
 filetype plugin indent on
@@ -64,16 +50,8 @@ endif
 set spell spelllang=en_us
 set nospell
 set hlsearch
-" set background=light
 set cursorline
 let python_highlight_all=1
-
-"make tabs be replaced by 4 spaces
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=0
-set smarttab
 
 " Replace concealed text by a single character
 " Don't conceal anything
@@ -81,7 +59,7 @@ if has("conceal")
     set conceallevel=2
 endif
 
-" spell stuff
+" spell stuff with <leader>-s
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
 "Indent guide stuff
@@ -99,20 +77,11 @@ elseif has('unix')
 endif
 let g:airline_theme='understated'
 
-" fzf
-set rtp+=/usr/local/opt/fzf
-
-
 " Rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" " Vim notes
-" let g:notes_directories = ['~/Cloud/vim_notes']
-" let g:notes_smart_quotes = 0
-" let g:notes_suffix = '.md'
 
 " vimwiki options
 let wiki_misc = {'path': '~/Cloud/vimwiki/misc/', 'syntax': 'markdown', 'ext': '.md'}
@@ -123,19 +92,14 @@ let g:vimwiki_list = [wiki_misc, wiki_res, wiki_teach]
 "Gui options turn off toolbar
 set guioptions=
 
-"Show invisible characters with \l
-" Shortcut to rapidly toggle `set list`
+" Show invisible characters with <leader>-l
 nmap <leader>l :set list!<CR>
-" Use the same symbols as TextMate for tabstops and EOLs
-" set listchars=tab:▸\ ,eol:¬
-" set lcs+=space:
 if v:version >= 740
     set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
 endif
 if v:version < 740
     set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,nbsp:·
 endif
-" set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 "Invisible character colors
 highlight NonText guifg=#333333
@@ -154,6 +118,7 @@ set tabstop=8
 set shiftwidth=4
 set expandtab
 set smarttab
+set softtabstop=4
 " set textwidth=79
 
 " Makefile have to use tabs
