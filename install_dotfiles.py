@@ -17,4 +17,8 @@ files_to_link = ['.bashrc',
 for f in files_to_link:
     os.symlink(os.path.join(current_dir, f), os.path.join(home_dir, f))
 
-
+# Also install fzf
+"""
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+"""

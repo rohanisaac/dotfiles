@@ -22,7 +22,7 @@ alias diff_folder="diff -rq --exclude='.git' "
 
 # some common aliases
 alias ls="ls -G --color=auto"
-alias ll="ls -GAlh --color=auto"
+alias ll="ls -Glh --color=auto"
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
@@ -99,3 +99,10 @@ alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect"
 
 alias units=gunits
 alias vmd='/Applications/VMD\ 1.9.3.app/Contents/Resources/VMD.app/Contents/MacOS/VMD'
+
+## Killdevil stuff
+alias sub='bsub -q week -n 16 -R "span[hosts=1]"'
+alias cassub='busb -q week -n 16 -R "span[hosts=1]" ./castep-script.x'
+alias cambridge='. ~/scripts/cambridge.sh'
+alias gview='. ~/scripts/gview.sh'
+alias gausssub='bsub -q week -x -R "span[hosts=1]" -n 16 g09'
