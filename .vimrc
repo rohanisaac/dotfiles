@@ -123,16 +123,19 @@ let g:vimwiki_list = [wiki_misc, wiki_res, wiki_teach]
 "Gui options turn off toolbar
 set guioptions=
 
-if exists("&listchars")
-    "Show invisible characters with \l
-    " Shortcut to rapidly toggle `set list`
-    nmap <leader>l :set list!<CR>
-    " Use the same symbols as TextMate for tabstops and EOLs
-    " set listchars=tab:▸\ ,eol:¬
-    " set lcs+=space:
+"Show invisible characters with \l
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" Use the same symbols as TextMate for tabstops and EOLs
+" set listchars=tab:▸\ ,eol:¬
+" set lcs+=space:
+if v:version >= 740
     set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
-    " set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 endif
+if v:version < 740
+    set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,nbsp:·
+endif
+" set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 "Invisible character colors
 highlight NonText guifg=#333333
