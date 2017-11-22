@@ -58,7 +58,9 @@ set encoding=utf-8
 set showcmd
 set clipboard=unnamed  " set vim==system clipboard
 set number " add line numbers
-set colorcolumn=80
+if exists("&colorcolumn")
+    set colorcolumn=80
+endif
 set spell spelllang=en_us
 set nospell
 set hlsearch
@@ -75,7 +77,9 @@ set smarttab
 
 " Replace concealed text by a single character
 " Don't conceal anything
-set conceallevel=2
+if has("conceal")
+    set conceallevel=2
+endif
 
 " spell stuff
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
@@ -119,14 +123,16 @@ let g:vimwiki_list = [wiki_misc, wiki_res, wiki_teach]
 "Gui options turn off toolbar
 set guioptions=
 
-"Show invisible characters with \l
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-" Use the same symbols as TextMate for tabstops and EOLs
-" set listchars=tab:▸\ ,eol:¬
-" set lcs+=space:
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
-" set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+if exists("&listchars")
+    "Show invisible characters with \l
+    " Shortcut to rapidly toggle `set list`
+    nmap <leader>l :set list!<CR>
+    " Use the same symbols as TextMate for tabstops and EOLs
+    " set listchars=tab:▸\ ,eol:¬
+    " set lcs+=space:
+    set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+    " set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+endif
 
 "Invisible character colors
 highlight NonText guifg=#333333
