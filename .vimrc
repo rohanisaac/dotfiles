@@ -13,7 +13,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'  " Better defaults
 Plugin 'tpope/vim-surround' " complete brackets/quotes
-Plugin 'jiangmiao/auto-pairs'  " insert brackets in pairs
 Plugin 'ervandew/supertab'    " autocomplete with tabs
 Plugin 'tpope/vim-commentary'  "easy comments
 
@@ -58,6 +57,8 @@ let python_highlight_all=1
 if has("conceal")
     set conceallevel=2
 endif
+set nobackup
+set omnifunc=syntaxcomplete#Complete
 
 " spell stuff with <leader>-s
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
@@ -87,7 +88,8 @@ au Syntax * RainbowParenthesesLoadBraces
 let wiki_misc = {'path': '~/Cloud/vimwiki/misc/', 'syntax': 'markdown', 'ext': '.md'}
 let wiki_res = {'path': '~/Cloud/vimwiki/research/', 'syntax': 'markdown', 'ext': '.md'}
 let wiki_teach = {'path': '~/Cloud/vimwiki/teaching/', 'syntax': 'markdown', 'ext': '.md'}
-let g:vimwiki_list = [wiki_misc, wiki_res, wiki_teach]
+let wiki_notes = {'path': '~/Cloud/vimwiki/notes/', 'syntax': 'markdown', 'ext': '.md'}
+let g:vimwiki_list = [wiki_misc, wiki_res, wiki_teach, wiki_notes]
 
 "Gui options turn off toolbar
 set guioptions=

@@ -1,5 +1,11 @@
 #! bin/bash
 
+# Set bash options
+# ----------------------------------------------------------------------------
+shopt -s checkwinsize # update window size after each command
+shopt -s histappend # append to history file
+PROMPT_DIRTRIM=2
+
 # Basic enviroment variables
 # ----------------------------------------------------------------------------
 export EDITOR=vim
@@ -9,15 +15,20 @@ export LANGUAGE=en_US.UTF-8
 # unlimited bash history
 export HISTSIZE=
 export HISTFILESIZE=
+# color to terminal
+export CLICOLOR=1
 
 # PATH and other includes
 # ----------------------------------------------------------------------------
 # add gnuutils to path and man path
+# export to manpath to make them available to subprocesss
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # load scripts
-PATH="~/Cloud/scripts/linux:$PATH"
+PATH="~/bin:~/Cloud/scripts/linux:$PATH"
+# namd
+PATH="/Users/rohan/Documents/namd:$PATH"
 
 # bash completion
 if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -64,10 +75,10 @@ else
     export PS1="$yellow\u$NC@$yellow\H $purple\w $NC\n$ "
 fi
 
-# fix bugs
+# ITerm title
 # ----------------------------------------------------------------------------
-# Fix backspace bug on xterm
-stty erase '^?'
+export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+
 # Souce other files
 # ----------------------------------------------------------------------------
 

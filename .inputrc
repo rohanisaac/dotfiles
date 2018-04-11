@@ -10,3 +10,4 @@ set blink-matching-paren On
 set match-hidden-files
 set visible-stats On
 set show-all-if-ambiguous On
+set mark-symlinked-directories On

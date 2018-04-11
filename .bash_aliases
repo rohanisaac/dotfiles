@@ -21,8 +21,10 @@ alias tree="tree --dirsfirst -C"
 alias diff_folder="diff -rq --exclude='.git' "
 
 # some common aliases
-alias ls="ls -G --color=auto"
-alias ll="ls -Glh --color=auto"
+alias ls="ls --color=auto"
+alias ll="ls -lh --color=auto --group-directories-first"
+alias la="ls -Alh --color=auto --group-directories-first"
+alias recent="ls -t | head -n 5"
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
@@ -54,6 +56,7 @@ extract() {
         *.gz)        gunzip $1      ;; 
         *.tar)       tar xf $1      ;; 
         *.tbz2)      tar xjf $1     ;; 
+        *.tbz)       tar xjf $1     ;; 
         *.tgz)       tar xzf $1     ;; 
         *.zip)       unzip $1       ;; 
         *.Z)         gunzip $1      ;; 
@@ -79,7 +82,7 @@ alias dv="source deactivate"
 alias nb="jupyter notebook --browser=firefox"
 function ana {
     echo "Adding Anaconda python"
-	export PATH=~/anaconda3/bin:$PATH
+    export PATH=~/anaconda3/bin:$PATH
     which python
     python --version
 }
