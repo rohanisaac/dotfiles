@@ -20,6 +20,7 @@ Plugin 'tpope/vim-commentary'  "easy comments
 Plugin 'vim-airline/vim-airline'  " better status bar
 Plugin 'vim-airline/vim-airline-themes'  " Associated themes
 Plugin 'tomasr/molokai' " Theme
+Plugin 'flazz/vim-colorschemes'
 Plugin 'nathanaelkane/vim-indent-guides' " Show indent tabs
 Plugin 'ntpeters/vim-better-whitespace'  " Highlights trailing, :StripWhitespace
 Plugin 'kien/rainbow_parentheses.vim' " highligts associated ()
@@ -37,8 +38,9 @@ filetype plugin indent on
 " ----------------------------------------------------------------------------
 " Basic settings
 " ----------------------------------------------------------------------------
-
-colorscheme molokai
+" set background=light
+" colorscheme molokai
+colorscheme Tomorrow
 set encoding=utf-8
 set showcmd
 set clipboard=unnamed  " set vim==system clipboard

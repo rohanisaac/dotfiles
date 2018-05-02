@@ -1,0 +1,14 @@
+# Git user config file
+[user]
+name = Rohan Isaac
+email = rohan_isaac@yahoo.com
+
+[core]
+editor = vim
+
+[diff]
+tool = vimdiff
+
+[difftool]
+prompt = false
+

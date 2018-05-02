@@ -100,7 +100,9 @@ alias vpn="/opt/cisco/anyconnect/bin/vpn"
 alias vpnc="/opt/cisco/anyconnect/bin/vpn connect vpn.unc.edu"
 alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect"
 
-alias units=gunits
+if [ -f gunits ]; then
+    alias units=gunits
+fi
 alias vmd='/Applications/VMD\ 1.9.3.app/Contents/Resources/VMD.app/Contents/MacOS/VMD'
 
 ## Killdevil stuff

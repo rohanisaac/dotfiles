@@ -42,6 +42,8 @@ fi
 # add fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+[ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
+
 # TERMINAL OPEN ACROSS OS
 # ----------------------------------------------------------------------------
 case "$OSTYPE" in
