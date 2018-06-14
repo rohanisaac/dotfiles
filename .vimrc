@@ -30,6 +30,7 @@ Plugin 'junegunn/vim-easy-align' "easy alignment
 Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
 Plugin 'airblade/vim-gitgutter'  " git diff on the left
 Plugin 'junegunn/fzf.vim'
+Plugin 'mhinz/vim-startify' " start page
 Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
@@ -39,8 +40,8 @@ filetype plugin indent on
 " Basic settings
 " ----------------------------------------------------------------------------
 " set background=light
-" colorscheme molokai
-colorscheme Tomorrow
+colorscheme monokain
+" colorscheme Tomorrow
 set encoding=utf-8
 set showcmd
 set clipboard=unnamed  " set vim==system clipboard
