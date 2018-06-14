@@ -13,6 +13,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-sensible'  " Better defaults
 Plugin 'tpope/vim-surround' " complete brackets/quotes
+Plugin 'tpope/vim-repeat' " use . after surround etc.
 Plugin 'ervandew/supertab'    " autocomplete with tabs
 Plugin 'tpope/vim-commentary'  "easy comments
 
