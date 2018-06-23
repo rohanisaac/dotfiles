@@ -32,6 +32,7 @@ Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
 Plugin 'airblade/vim-gitgutter'  " git diff on the left
 Plugin 'junegunn/fzf.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'sencer/lammps.vim'
 
 call vundle#end()
 filetype plugin indent on
