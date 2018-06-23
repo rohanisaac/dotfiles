@@ -23,6 +23,7 @@ export CLICOLOR=1
 # add gnuutils to path and man path
 # export to manpath to make them available to subprocesss
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/lib64/openmpi/bin/:$PATH" # for mpiexec, mpirun and lmp on linux
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # load scripts
