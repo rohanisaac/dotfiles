@@ -31,7 +31,6 @@ Plugin 'junegunn/vim-easy-align' "easy alignment
 Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
 Plugin 'airblade/vim-gitgutter'  " git diff on the left
 Plugin 'junegunn/fzf.vim'
-Plugin 'mhinz/vim-startify' " start page
 Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
