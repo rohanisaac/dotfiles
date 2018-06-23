@@ -93,8 +93,19 @@ function ipy {
 alias res="source activate research"
 alias em="emacs --no-window"
 
+# os specific
+case "$OSTYPE" in
+    cygwin*)
+        ;;
+    linux*)
+        ;;
+    darwin*)
+        alias vmd='/Applications/VMD\ 1.9.3.app/Contents/Resources/VMD.app/Contents/MacOS/VMD'
+        alias csd="source /Applications/CCDC/Python_API_2017/miniconda/bin/activate"
+        ;;
+esac
+
 # software specific
-alias csd="source /Applications/CCDC/Python_API_2017/miniconda/bin/activate"
 
 alias vpn="/opt/cisco/anyconnect/bin/vpn"
 alias vpnc="/opt/cisco/anyconnect/bin/vpn connect vpn.unc.edu"
@@ -103,7 +114,6 @@ alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect"
 if [ -f gunits ]; then
     alias units=gunits
 fi
-alias vmd='/Applications/VMD\ 1.9.3.app/Contents/Resources/VMD.app/Contents/MacOS/VMD'
 
 ## Killdevil stuff
 alias sub='bsub -q week -n 16 -R "span[hosts=1]"'

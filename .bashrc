@@ -24,6 +24,7 @@ export CLICOLOR=1
 # export to manpath to make them available to subprocesss
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/lib64/openmpi/bin/:$PATH" # for mpiexec, mpirun and lmp on linux
+PATH="/home/rohan/Documents/ovito-2.9.0-x86_64/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # load scripts
