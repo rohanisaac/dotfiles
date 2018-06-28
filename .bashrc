@@ -31,6 +31,12 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 PATH="~/bin:~/Cloud/scripts/linux:$PATH"
 # namd
 PATH="/Users/rohan/Documents/namd:$PATH"
+# lammps tools
+PATH="/home/rohan/Documents/lammps-16Mar18/tools/python:$PATH"
+PATH="/home/rohan/Documents/NAMD_2.12_Linux-x86_64-multicore:$PATH"
+# other env variables
+
+export LAMMPS_PYTHON_TOOLS=/home/rohan/Documents/lammps-16Mar18/tools/python/pizza
 
 # bash completion
 if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -40,6 +46,10 @@ elif [ -f //usr/local/etc/bash_completion  ]; then
 elif [ -f /etc/bash_completion  ]; then
     . /etc/bash_completion
 fi
+
+# highlighting in less
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+export LESS=' -R '
 
 # add fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
