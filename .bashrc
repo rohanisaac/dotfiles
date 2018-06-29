@@ -50,6 +50,9 @@ fi
 # highlighting in less
 export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
 export LESS=' -R '
+VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
+alias less="$VIMRUNTIME/macros/less.sh"
+
 
 # add fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
