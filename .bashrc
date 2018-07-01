@@ -23,20 +23,11 @@ export CLICOLOR=1
 # add gnuutils to path and man path
 # export to manpath to make them available to subprocesss
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-PATH="/usr/lib64/openmpi/bin/:$PATH" # for mpiexec, mpirun and lmp on linux
-PATH="/home/rohan/Documents/ovito-2.9.0-x86_64/bin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+PATH="/usr/lib64/openmpi/bin/:$PATH" # for mpiexec, mpirun and lmp on linux
 
 # load scripts
 PATH="~/bin:~/Cloud/scripts/linux:$PATH"
-# namd
-PATH="/Users/rohan/Documents/namd:$PATH"
-# lammps tools
-PATH="/home/rohan/Documents/lammps-16Mar18/tools/python:$PATH"
-PATH="/home/rohan/Documents/NAMD_2.12_Linux-x86_64-multicore:$PATH"
-# other env variables
-
-export LAMMPS_PYTHON_TOOLS=/home/rohan/Documents/lammps-16Mar18/tools/python/pizza
 
 # bash completion
 if [ -f /usr/share/bash-completion/bash_completion ]; then
