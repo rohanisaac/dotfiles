@@ -21,14 +21,17 @@ export CLICOLOR=1
 # PATH and other includes
 # ----------------------------------------------------------------------------
 # add gnuutils to path and man path
-# export to manpath to make them available to subprocesss
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+PATH="/usr/local/sbin:$PATH"
+PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 PATH="/usr/lib64/openmpi/bin/:$PATH" # for mpiexec, mpirun and lmp on linux
+PATH="~/Cloud/scripts/linux:$PATH"
 
-# load scripts
-PATH="~/bin:~/Cloud/scripts/linux:$PATH"
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# export to make them available to subprocesss
+export MANPATH
+export PATH
 # bash completion
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion

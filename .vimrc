@@ -34,6 +34,10 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'sencer/lammps.vim'
 
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -138,3 +142,7 @@ set ignorecase
 " Markdown files
 au BufNewFile,BufRead *.md  setf markdown
 autocmd BufRead,BufNew *.md set filetype=markdown
+
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
