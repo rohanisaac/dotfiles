@@ -82,12 +82,12 @@ alias dv="source deactivate"
 alias nb="jupyter notebook --browser=firefox"
 function ana {
     echo "Adding Anaconda python"
-    export PATH=~/anaconda3/bin:$PATH
+    export PATH="$HOME/anaconda3/bin:$PATH"
     which python
     python --version
 }
 function ipy {
-    export PATH=~/anaconda3/bin:$PATH
+    export PATH="$HOME/anaconda3/bin:$PATH"
     ipython -i ~/Cloud/scripts/linux/research-ipy-start.py
 }
 alias res="source activate research"

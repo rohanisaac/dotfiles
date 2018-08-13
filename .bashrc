@@ -21,17 +21,19 @@ export CLICOLOR=1
 # PATH and other includes
 # ----------------------------------------------------------------------------
 # add gnuutils to path and man path
+PATH="/Library/TeX/texbin:$PATH"  # texlive on mac
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="/usr/lib64/openmpi/bin:$PATH" # for mpiexec, mpirun and lmp on linux
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-PATH="/usr/local/sbin:$PATH"
-PATH="$PATH:$HOME/.local/bin:$HOME/bin"
-PATH="/usr/lib64/openmpi/bin/:$PATH" # for mpiexec, mpirun and lmp on linux
-PATH="~/Cloud/scripts/linux:$PATH"
+PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+PATH="$HOME/Cloud/scripts/linux:$PATH"
 
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # export to make them available to subprocesss
 export MANPATH
 export PATH
+
 # bash completion
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -50,7 +52,6 @@ alias less="$VIMRUNTIME/macros/less.sh"
 
 # add fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
 
 # TERMINAL OPEN ACROSS OS

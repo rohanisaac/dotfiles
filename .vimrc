@@ -31,7 +31,6 @@ Plugin 'junegunn/vim-easy-align' "easy alignment
 Plugin 'thinca/vim-fontzoom'  " Zoom with mouse or C-+ in GVIM
 Plugin 'airblade/vim-gitgutter'  " git diff on the left
 Plugin 'junegunn/fzf.vim'
-Plugin 'vimwiki/vimwiki'
 Plugin 'sencer/lammps.vim'
 
 " Markdown
@@ -46,7 +45,6 @@ filetype plugin indent on
 " ----------------------------------------------------------------------------
 " set background=light
 colorscheme monokain
-" colorscheme Tomorrow
 set encoding=utf-8
 set showcmd
 set clipboard=unnamed  " set vim==system clipboard
