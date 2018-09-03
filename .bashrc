@@ -30,6 +30,8 @@ PATH="$HOME/Cloud/scripts/linux:$PATH"
 
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+export PYTHONPATH="$HOME/Cloud/python/spectra"
+
 # export to make them available to subprocesss
 export MANPATH
 export PATH
