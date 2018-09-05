@@ -18,7 +18,7 @@ Plugin 'tpope/vim-commentary'  "easy comments
 " Appearence
 Plugin 'vim-airline/vim-airline'  " better status bar
 Plugin 'flazz/vim-colorschemes'
-Plugin 'nathanaelkane/vim-indent-guides' " Show indent tabs
+" Plugin 'nathanaelkane/vim-indent-guides' " Show indent tabs
 " Plugin 'ntpeters/vim-better-whitespace'  " Highlights trailing, :StripWhitespace
 Plugin 'kien/rainbow_parentheses.vim' " highligts associated ()
 

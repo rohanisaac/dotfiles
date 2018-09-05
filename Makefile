@@ -8,11 +8,11 @@ link:
 	# ln -vsi ${PWD}/.bash_profile ${HOME}/.bash_profile
 	ln -vsi ${PWD}/.bashrc ${HOME}/.bashrc
 	ln -vsi ${PWD}/.git-prompt.sh ${HOME}/.git-prompt.sh
+	ln -vsi ${PWD}/.gitconfig ${HOME}/.gitconfig
 	ln -vsi ${PWD}/.inputrc ${HOME}/.inputrc
 	ln -vsi ${PWD}/.screenrc ${HOME}/.screenrc
 	ln -vsi ${PWD}/.tmux.conf ${HOME}/.tmux.conf
 	ln -vsi ${PWD}/.vimrc ${HOME}/.vimrc
-	ln -vsi ${PWD}/.gitconfig ${HOME}/.gitconfig
 
 install:
 	# Install Vundle and FZF from the respective git repos
