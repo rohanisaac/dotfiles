@@ -12,6 +12,7 @@ link:
 	ln -vsi ${PWD}/.screenrc ${HOME}/.screenrc
 	ln -vsi ${PWD}/.tmux.conf ${HOME}/.tmux.conf
 	ln -vsi ${PWD}/.vimrc ${HOME}/.vimrc
+	ln -vsi ${PWD}/.gitconfig ${HOME}/.gitconfig
 
 install:
 	# Install Vundle and FZF from the respective git repos
