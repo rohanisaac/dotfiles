@@ -46,11 +46,13 @@ set omnifunc=syntaxcomplete#Complete
 
 " Search options: search while typing, and highlight all; taken from manual
 set ignorecase
-augroup vimrc-incsearch-highlight
-  autocmd!
-  autocmd CmdlineEnter /,\? :set hlsearch
-  autocmd CmdlineLeave /,\? :set nohlsearch
-augroup END
+if v:version > 704
+    augroup vimrc-incsearch-highlight
+      autocmd!
+      autocmd CmdlineEnter /,\? :set hlsearch
+      autocmd CmdlineLeave /,\? :set nohlsearch
+    augroup END
+endif
 
 " spell stuff with <leader>-s
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
