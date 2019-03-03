@@ -21,17 +21,21 @@ export CLICOLOR=1
 # PATH and other includes
 # ----------------------------------------------------------------------------
 # add gnuutils to path and man path
-PATH="/Library/TeX/texbin:$PATH"  # texlive on mac
+FULLPROF=/home/rohan/bin/FullProf_Suite
+PGI=/opt/pgi/linux86-64/18.10/bin
+ORCA=$HOME/bin/orca
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="/usr/lib64/openmpi/bin:$PATH" # for mpiexec, mpirun and lmp on linux
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 PATH="$HOME/Cloud/scripts/linux:$PATH"
-
+PATH=$PATH:$FULLPROF:$PGI:$ORCA
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export PYTHONPATH="$HOME/Cloud/python/spectra"
-
+PYTHONPATH="$PYTHONPATH:$HOME/Cloud/python/spectra"
+PYTHONPATH="$PYTHONPATH:$HOME/Cloud/python/spc"
+export PYTHONPATH
+export FULLPROF
 # export to make them available to subprocesss
 export MANPATH
 export PATH

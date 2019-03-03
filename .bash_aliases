@@ -11,6 +11,7 @@ fi
 
 # pine
 alias pine=alpine
+alias mc="mc --skin=dark"
 
 # searching
 # use qfind "*.ipynb"
