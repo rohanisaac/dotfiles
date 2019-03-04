@@ -46,13 +46,15 @@ set omnifunc=syntaxcomplete#Complete
 
 " Search options: search while typing, and highlight all; taken from manual
 set ignorecase
-if v:version > 704
+try
     augroup vimrc-incsearch-highlight
       autocmd!
       autocmd CmdlineEnter /,\? :set hlsearch
       autocmd CmdlineLeave /,\? :set nohlsearch
     augroup END
-endif
+catch
+    " Do nothing
+endtry
 
 " spell stuff with <leader>-s
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
@@ -80,10 +82,13 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-
-" Show invisible characters with <leader>-l
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
-nmap <leader>l :set list!<CR>
+try
+    " Show invisible characters with <leader>-l
+    set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
+    nmap <leader>l :set list!<CR>
+catch
+    " Do nothing
+endtry
 
 " ----------------------------------------------------------------------------
 " Python PEP8 standards
