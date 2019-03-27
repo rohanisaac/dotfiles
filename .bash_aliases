@@ -1,7 +1,9 @@
 #!/bin/bash
-# ALIASES
+
+# SOFTWARE
 # ----------------------------------------------------------------------------
 
+# vim
 if [ -f /usr/bin/vimx ]; then
     alias vi='vimx'
     alias vim='vimx'
@@ -12,6 +14,12 @@ fi
 # pine
 alias pine=alpine
 alias mc="mc --skin=dark"
+alias em="emacs --no-window"
+
+# software specific
+alias vpn="/opt/cisco/anyconnect/bin/vpn"
+alias vpnc="/opt/cisco/anyconnect/bin/vpn connect vpn.unc.edu"
+alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect"
 
 # searching
 # use qfind "*.ipynb"
@@ -34,11 +42,6 @@ alias cd..="cd .."
 alias type="type -all"
 alias du="du -h"
 alias df="df -h"
-
-# protect operations
-alias cp="cp -iv"
-alias mv="mv -iv"
-# alias rm="rm -Iv"  # too risky
 
 # list directory upoon cd
 cdl() { builtin cd "$@"; ls; }
@@ -81,44 +84,34 @@ alias astro="source activate astro"
 alias py="source activate scipy"
 alias dv="source deactivate"
 alias nb="jupyter notebook --browser=firefox"
+alias res="source activate research"
+
 function ana {
     echo "Adding Anaconda python"
     export PATH="$HOME/anaconda3/bin:$PATH"
     which python
     python --version
 }
+
 function ipy {
     export PATH="$HOME/anaconda3/bin:$PATH"
     ipython -i ~/Cloud/scripts/linux/research-ipy-start.py
 }
-alias res="source activate research"
-alias em="emacs --no-window"
 
-# os specific
+
+# TERMINAL OPEN ACROSS OS
+# ----------------------------------------------------------------------------
 case "$OSTYPE" in
     cygwin*)
+        alias open="cmd /c start"
         ;;
     linux*)
+        alias start="xdg-open"
+        alias open="xdg-open"
         ;;
     darwin*)
-        alias vmd='/Applications/VMD\ 1.9.3.app/Contents/Resources/VMD.app/Contents/MacOS/VMD'
-        alias csd="source /Applications/CCDC/Python_API_2017/miniconda/bin/activate"
+        alias start="open"
         ;;
 esac
 
-# software specific
 
-alias vpn="/opt/cisco/anyconnect/bin/vpn"
-alias vpnc="/opt/cisco/anyconnect/bin/vpn connect vpn.unc.edu"
-alias vpnd="/opt/cisco/anyconnect/bin/vpn disconnect"
-
-if [ -f gunits ]; then
-    alias units=gunits
-fi
-
-## Killdevil stuff
-alias sub='bsub -q week -n 16 -R "span[hosts=1]"'
-alias cassub='busb -q week -n 16 -R "span[hosts=1]" ./castep-script.x'
-alias cambridge='. ~/scripts/cambridge.sh'
-alias gview='. ~/scripts/gview.sh'
-alias gausssub='bsub -q week -x -R "span[hosts=1]" -n 16 g09'

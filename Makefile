@@ -3,6 +3,13 @@ help:
 
 all: link install
 
+conda:
+	# Install conda from anaconda.com
+	conda update -y conda
+	conda install -c conda-forge -y lmfit uncertainties pint peakutils rampy
+	conda install -y numpy pandas matplotlib scikit-learn jupyter notebook scipy
+	conda update -y --all
+
 link:
 	ln -vsi ${PWD}/.bash_aliases ${HOME}/.bash_aliases
 	# ln -vsi ${PWD}/.bash_profile ${HOME}/.bash_profile
