@@ -42,7 +42,9 @@ call vundle#end()
 " Basic settings
 " ----------------------------------------------------------------------------
 set background=dark
-set termguicolors
+if (has("termguicolors"))
+    set termguicolors
+endif
 colorscheme monokain
 set encoding=utf-8
 set showcmd
