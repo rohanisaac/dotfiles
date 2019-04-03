@@ -73,13 +73,13 @@ let g:indent_guides_enable_on_vim_startup=1
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
-" GUI options
-if has('mac')
-    set guifont=Source\ Code\ Pro\ Light:h13
-elseif has('unix')
-    set guifont=Source\ Code\ Pro\ 10
-endif
-set guioptions= " Gui options turn off toolbar
+" " GUI options
+" if has('mac')
+"     set guifont=Source\ Code\ Pro\ Light:h13
+" elseif has('unix')
+"     set guifont=Source\ Code\ Pro\ 10
+" endif
+" set guioptions= " Gui options turn off toolbar
 
 " Rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
