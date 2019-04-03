@@ -16,8 +16,9 @@ Plugin 'ervandew/supertab'    " autocomplete with tabs
 Plugin 'tpope/vim-commentary'  "easy comments
 
 " Appearence
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'vim-airline/vim-airline'  " better status bar
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'flazz/vim-colorschemes'
 " Plugin 'nathanaelkane/vim-indent-guides' " Show indent tabs
 " Plugin 'ntpeters/vim-better-whitespace'  " Highlights trailing, :StripWhitespace
 Plugin 'kien/rainbow_parentheses.vim' " highligts associated ()
@@ -25,27 +26,18 @@ Plugin 'kien/rainbow_parentheses.vim' " highligts associated ()
 " Other
 Plugin 'junegunn/vim-easy-align' " easy alignment, in visual mode eg:ga=
 Plugin 'airblade/vim-gitgutter'  " git diff on the left
-
-" tex
-Plugin 'lervag/vimtex'
-" Plugin 'LaTeX-Box-Team/LaTeX-Box'
-" Plugin 'coot/atp_vim'
-" Track the engine.
-Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+Plugin 'sheerun/vim-polyglot'  " large language support
 
 call vundle#end()
 
 " ----------------------------------------------------------------------------
 " Basic settings
 " ----------------------------------------------------------------------------
-set background=dark
+" set background=dark
 if (has("termguicolors"))
     set termguicolors
 endif
-colorscheme monokain
+colorscheme nord
 set encoding=utf-8
 set showcmd
 set clipboard=unnamed  " set vim==system clipboard
@@ -56,16 +48,6 @@ set spell spelllang=en_us
 set nospell
 set nobackup
 set omnifunc=syntaxcomplete#Complete
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-let g:vimtex_view_method = 'zathura'
 
 " Search options: search while typing, and highlight all; taken from manual
 set ignorecase
@@ -88,7 +70,7 @@ let g:indent_guides_start_level=2
 let g:indent_guides_enable_on_vim_startup=1
 
 " Airline settings
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
 " GUI options

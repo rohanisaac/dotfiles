@@ -43,6 +43,10 @@ alias type="type -all"
 alias du="du -h"
 alias df="df -h"
 
+# fedora specific
+alias dnfi="sudo dnf install"
+alias dnfr="sudo dnf remove"
+
 # list directory upoon cd
 cdl() { builtin cd "$@"; ls; }
 
