@@ -4,11 +4,11 @@
 # ----------------------------------------------------------------------------
 
 # vim
-if [ -f /usr/bin/vimx ]; then
-    alias vi='vimx'
-    alias vim='vimx'
+if [ -f /usr/bin/nvim ]; then
+    alias vi=nvim
+    alias vim=nvim
 elif [ -f /usr/bin/vim ]; then
-    alias vi='vim'
+    alias vi=vim
 fi
 
 # pine

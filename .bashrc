@@ -45,7 +45,7 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 fi
 
 # add fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /usr/share/fzf/shell/key-bindings.bash ] && source /usr/share/fzf/shell/key-bindings.bash
 
 # PS1

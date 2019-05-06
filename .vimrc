@@ -14,6 +14,7 @@ Plugin 'tpope/vim-surround' " complete brackets/quotes
 " Plugin 'tpope/vim-repeat' " use . after surround etc.
 Plugin 'ervandew/supertab'    " autocomplete with tabs
 Plugin 'tpope/vim-commentary'  "easy comments
+Plugin 'junegunn/fzf.vim'
 
 " Appearence
 Plugin 'arcticicestudio/nord-vim'
@@ -27,7 +28,6 @@ Plugin 'kien/rainbow_parentheses.vim' " highligts associated ()
 Plugin 'junegunn/vim-easy-align' " easy alignment, in visual mode eg:ga=
 Plugin 'airblade/vim-gitgutter'  " git diff on the left
 Plugin 'sheerun/vim-polyglot'  " large language support
-
 call vundle#end()
 
 " ----------------------------------------------------------------------------
@@ -96,6 +96,15 @@ catch
 endtry
 
 " ----------------------------------------------------------------------------
+" FZF shortcuts
+" ----------------------------------------------------------------------------
+nmap <leader>f :Files<cr>
+nmap <leader>/ :BLines<cr>
+nmap <leader>b :Buffers<cr>
+nmap <leader>r :Rg 
+nmap <leader>c :Commands<cr>
+
+" ----------------------------------------------------------------------------
 " Python PEP8 standards
 " ----------------------------------------------------------------------------
 set tabstop=8
@@ -109,3 +118,9 @@ set textwidth=79
 au BufRead,BufNewFile Makefile* set noexpandtab
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
+" ----------------------------------------------------------------------------
+" latex settings
+" ----------------------------------------------------------------------------
+let g:LatexBox_viewer='zathura'
+let g:LatexBox_latexmk_preview_continuously=1
+let g:LatexBox_quickfix=2 
