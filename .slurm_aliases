@@ -1,0 +1,1 @@
+alias sjobs="squeue -u $USER"

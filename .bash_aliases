@@ -121,3 +121,7 @@ function conda_initialize {
     unset __conda_setup
     # <<< conda initialize <<<
 }
+
+if [ -f ~/.slurm_aliases ]; then
+	. ~/.slurm_aliases
+fi
