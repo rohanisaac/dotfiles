@@ -1,4 +1,6 @@
-#!/bin/bash
+# ~/.bash_aliases CONFIGURATION FILE
+
+alias open=xdg-open
 
 # SOFTWARE
 # ----------------------------------------------------------------------------
@@ -84,38 +86,38 @@ alias ranger='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`;
 # ----------------------------------------------------------------------------
 # use single quotes so that the variables are escaped, i.e. don't expand on defn, but on use
 
-alias astro="source activate astro"
-alias py="source activate scipy"
-alias dv="source deactivate"
-alias nb="jupyter notebook --browser=firefox"
-alias res="source activate research"
+function av {
+    conda_initialize
+    echo "Activating $1"    
+    conda activate $1
+}
 
-function ana {
-    echo "Adding Anaconda python"
-    export PATH="$HOME/anaconda3/bin:$PATH"
+alias dv="conda deactivate"
+alias aa="conda_initialize"
+alias nb="jupyter notebook --browser=firefox"
+
+function ipy {
+    ipython -i ~/Cloud/scripts/linux/research-ipy-start.py
+}
+
+function pv {
     which python
     python --version
 }
 
-function ipy {
-    export PATH="$HOME/anaconda3/bin:$PATH"
-    ipython -i ~/Cloud/scripts/linux/research-ipy-start.py
+function conda_initialize {
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/home/rohan/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/rohan/anaconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/rohan/anaconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/rohan/anaconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
 }
-
-
-# TERMINAL OPEN ACROSS OS
-# ----------------------------------------------------------------------------
-case "$OSTYPE" in
-    cygwin*)
-        alias open="cmd /c start"
-        ;;
-    linux*)
-        alias start="xdg-open"
-        alias open="xdg-open"
-        ;;
-    darwin*)
-        alias start="open"
-        ;;
-esac
-
-

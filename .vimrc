@@ -112,7 +112,7 @@ set shiftwidth=4
 set expandtab
 set smarttab
 set softtabstop=4
-set textwidth=79
+" set textwidth=79
 
 " Makefile have to use tabs
 au BufRead,BufNewFile Makefile* set noexpandtab
