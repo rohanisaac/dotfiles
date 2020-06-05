@@ -22,7 +22,7 @@ link:
 	ln -vsi ${PWD}/.vimrc ${HOME}/.vimrc
 
 install:
-	# Install Vundle and FZF from the respective git repos
-	git clone --depth 1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	# Install VimPlug and FZF from the respective git repos
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install
