@@ -33,8 +33,13 @@ alias diff_folder="diff -rq --exclude='.git' "
 
 # some common aliases
 alias ls="ls --color=auto"
-alias ll="ls -lh --color=auto --group-directories-first"
-alias la="ls -Alh --color=auto --group-directories-first"
+if [ -f /usr/bin/exa ]; then
+    alias ll="exa -lh --color=auto --group-directories-first"
+    alias la="exa -alh --color=auto --group-directories-first"
+else
+    alias ll="ls -lh --color=auto --group-directories-first"
+    alias la="ls -Alh --color=auto --group-directories-first"
+fi
 alias recent="ls -t | head -n 5"
 alias ..="cd .."
 alias ...="cd ../../"
